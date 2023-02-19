@@ -1,4 +1,7 @@
-import './globals.css'
+"use client"
+import { NextUIProvider } from "@nextui-org/react"
+import Navigation from '@/components/navigation/navigation'
+import { darkTheme } from "@/tools/themes/darkTheme"
 
 export default function RootLayout({
   children,
@@ -7,12 +10,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <title>EAP - Easy Assignment Project</title>
       {/*
         <head /> will contain the components returned by the nearest parent
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body>{children}</body>
+      
+      <body>
+        <NextUIProvider theme={darkTheme}>
+          <Navigation></Navigation>
+          {children}      
+        </NextUIProvider>        
+      </body>
     </html>
   )
 }
