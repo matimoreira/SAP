@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Navbar, Text, Avatar, Dropdown } from "@nextui-org/react";
 import { EAPLogo } from "./EAPLogo";
 
-export default function Navigation()
+export default function Navigation({page, setPage}: {page: string | null, setPage: (value: string) => void})
 {
     const collapseItems = [
         "Home",
@@ -32,13 +32,13 @@ export default function Navigation()
             </Navbar.Brand>
             <Navbar.Content enableCursorHighlight activeColor="primary" hideIn="xs" variant="highlight">
                     <Link href="/" legacyBehavior passHref >                    
-                        <Navbar.Link>Home</Navbar.Link>
+                        <Navbar.Link onClick={ e => (setPage("/"))} isActive={page === "/"}>Home</Navbar.Link>
                     </Link>
                     <Link href="/Developers" legacyBehavior passHref >
-                        <Navbar.Link>Developers</Navbar.Link>
+                        <Navbar.Link onClick={ e => (setPage("/Developers"))} isActive={page === "/Developers"}>Developers</Navbar.Link>
                     </Link>
                     <Link href="/Skills" legacyBehavior passHref >
-                        <Navbar.Link>Skills</Navbar.Link>
+                        <Navbar.Link onClick={ e => (setPage("/Skills"))} isActive={page === "/Skills"}>Skills</Navbar.Link>
                     </Link>
             </Navbar.Content>
             <Navbar.Content 

@@ -2,12 +2,17 @@
 import { NextUIProvider } from "@nextui-org/react"
 import Navigation from '@/components/navigation/navigation'
 import { darkTheme } from "@/tools/themes/darkTheme"
+import { useState } from "react"
+import { usePathname } from 'next/navigation';
+import AppLayout from '@/components/appLayout/appLayout'
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  const [page, setPage] = useState(usePathname() === "/"? "/": usePathname());
+  console.log(page);
   return (
     <html lang="en">
       <title>EAP - Easy Assignment Project</title>
@@ -19,8 +24,11 @@ export default function RootLayout({
       
       <body>
         <NextUIProvider theme={darkTheme}>
-          <Navigation></Navigation>
-          {children}      
+          {/* <AppLayout> */}
+            <Navigation page={page} setPage={setPage}></Navigation>
+            {children}
+            {/*Footer */}
+          {/* </AppLayout>  */}
         </NextUIProvider>        
       </body>
     </html>
