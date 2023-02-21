@@ -35,9 +35,9 @@ export default function Skills(){
     return (
         <>
             <Grid.Container gap={2} justify="center">
-                <Grid xs={0} md={1} xl={6}>
-                </Grid> 
-                <Grid xs={12} md={10} xl={2} >
+                {/* <Grid xs={0} md={1} xl={6}>
+                </Grid>  */}
+                <Grid xs={12} md={12} xl={12} >
                     <Grid.Container gap={2} >
                         <Grid xs={12} md={12} xl={12} justify="center">
                             <Input  
@@ -50,13 +50,13 @@ export default function Skills(){
                         {
                             debouncedQuery.length > 0 ?
                                 searchedSkills?.map( skill => (
-                                    <Grid xs={6} md={4} xl={2} key={skill._id} >
+                                    <Grid xs={6} md={6} xl={6} key={skill._id} >
                                         <User text={skill.name} name={skill.name} color={skill.tag} squared ></User>
                                     </Grid>                              
                                 ))
                                 :
                                 allSkills?.map( skill => (
-                                    <Grid xs={6} md={4} xl={2} key={skill._id} >
+                                    <Grid xs={6} md={6} xl={6} key={skill._id} >
                                         <User text={skill.name} name={skill.name} color={skill.tag} squared ></User>
                                     </Grid>                              
                                 ))
@@ -64,8 +64,8 @@ export default function Skills(){
                         }
                     </Grid.Container>  
                 </Grid>
-                <Grid xs={0} md={1} xl={6}>
-                </Grid>
+                {/* <Grid xs={0} md={1} xl={6}>
+                </Grid> */}
             </Grid.Container>
         </>
     )

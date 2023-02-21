@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Navbar, Text, Avatar, Dropdown } from "@nextui-org/react";
 import { EAPLogo } from "./EAPLogo";
 
-export default function Navigation()
+export default function Navigation({page, setPage}: {page: string | null, setPage: (value: string) => void})
 {
     const collapseItems = [
         "Home",
@@ -13,8 +13,8 @@ export default function Navigation()
 
     return (
         <>
-        <Navbar isBordered shouldHideOnScroll variant="floating">
-            <Navbar.Toggle showIn="xs" />
+        <Navbar isBordered variant="sticky">
+            <Navbar.Toggle />
                 <Navbar.Brand
                     css={{
                         "@xs": {
@@ -23,24 +23,13 @@ export default function Navigation()
                     }}
                 >                
                 <EAPLogo />
-                <Text b color="inherit" hideIn="md">
+                {/* <Text b color="inherit" hideIn="xl">
                     Easy Assignment Proyect
-                </Text>
-                <Text b color="inherit" showIn="md">
+                </Text> */}
+                <Text b color="inherit">
                     EAP
                 </Text>
             </Navbar.Brand>
-            <Navbar.Content enableCursorHighlight activeColor="primary" hideIn="xs" variant="highlight">
-                    <Link href="/" legacyBehavior passHref >                    
-                        <Navbar.Link>Home</Navbar.Link>
-                    </Link>
-                    <Link href="/Developers" legacyBehavior passHref >
-                        <Navbar.Link>Developers</Navbar.Link>
-                    </Link>
-                    <Link href="/Skills" legacyBehavior passHref >
-                        <Navbar.Link>Skills</Navbar.Link>
-                    </Link>
-            </Navbar.Content>
             <Navbar.Content 
                 css={{
                     "@xs": {
@@ -83,13 +72,13 @@ export default function Navigation()
             </Navbar.Content>
             <Navbar.Collapse disableAnimation>
                 <Navbar.CollapseItem>
-                    <Link href="/">Home</Link>
+                    <Link href="/" onClick={ e => (setPage("/"))}>Home</Link>
                 </Navbar.CollapseItem>
                 <Navbar.CollapseItem>
-                    <Link href="/Developers">Developers</Link>
+                    <Link href="/Developers" onClick={ e => (setPage("/Developers"))}>Developers</Link>
                 </Navbar.CollapseItem>
                 <Navbar.CollapseItem>
-                    <Link href="/Skills">Skills</Link>
+                    <Link href="/Skills" onClick={ e => (setPage("/Skills"))}>Skills</Link>
                 </Navbar.CollapseItem>
             </Navbar.Collapse>
         </Navbar>

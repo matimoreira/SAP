@@ -38,7 +38,7 @@ export async function getDevelopersByName( value: string): Promise<DeveloperProp
     return await cursor.toArray();
 }
 
-export async function getDevelopers_SkillByName( value: string): Promise<Dev_SkillsProps[]> {
+export async function getDevelopers_SkillByName( value: string | string[]): Promise<Dev_SkillsProps[]> {
     let client = await clientPromise;
     let collection = client.db('SAP').collection('dev_skills');
     let regexComparison = RegExp(".*" + value + ".*", "i");

@@ -51,9 +51,9 @@ export default function Developers(){
     return (
         <>
             <Grid.Container gap={2} justify="center">
-                <Grid xs={0} md={3} xl={6}>
-                </Grid>
-                <Grid xs={12} md={5} xl={2} >
+                {/* <Grid xs={0} md={3} xl={6}>
+                </Grid> */}
+                <Grid xs={12} md={12} xl={12} >
                     <Grid.Container gap={2} >
                         {/* <Spacer y={1}/> */}
                         <Grid xs={12} md={12} xl={12} justify="center">
@@ -75,8 +75,8 @@ export default function Developers(){
                         </Grid>
                     </Grid.Container>
                 </Grid>
-                <Grid xs={0} md={3} xl={6}>
-                </Grid>
+                {/* <Grid xs={0} md={3} xl={6}>
+                </Grid> */}
             </Grid.Container>
         </>
         

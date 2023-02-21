@@ -58,14 +58,10 @@ export function CollapseItem({ items }: { items: Dev_SkillsProps[] | null | unde
 
                         {
                             dev.dev_skills?.length > 0 ?
-                                <Avatar.Group count={dev.dev_skills.length < 3 ? undefined : dev.dev_skills.length-3} css={{paddingLeft: "$10", paddingTop:"$10"}}>
+                                <Avatar.Group key={dev._id} count={dev.dev_skills.length < 3 ? undefined : dev.dev_skills.length-3} css={{paddingLeft: "$10", paddingTop:"$10"}}>
                                 {
                                     dev.dev_skills.slice(0, 3)?.map( skill =>(
                                         <Avatar key={skill._id} size="lg" pointer text={skill.name} color={skill.tag} alt={skill.name} squared/>
-                                        
-
-
-                                        // <User text={skill.name} name={skill.name} squared ></User>
                                     ))
                                 }
                                 </Avatar.Group> :
