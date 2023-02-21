@@ -1,23 +1,20 @@
-import { EAPLogo } from "@/components/navigation/EAPLogo"
-
 export default function Home() {
   return (
-    <>
-        <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-            {/* <div>1</div>
-            <div>2</div>
-            <div>3</div> */}
-            {/* <h1 style={{fontSize: '2rem'}}>EAP <span><EAPLogo/></span>Easy Assigment Project</h1> */}
-            {/* <h1 style={{fontSize: '2rem'}}>EAP</h1> */}
-            <span><EAPLogo/></span>
-            <h1 style={{fontSize: '2rem'}}>Easy Assigment Project</h1>
+    <>  
+        <div style={{padding: '0px 24px'}}>
+            <h1 style={{textAlign: 'center'}}>Easy Assigment Project</h1>
+            <p style={{fontSize: '1.125rem'}}>Es un proyecto que utiliza el siguiente stack de tecnologias:</p>
+            <ul>
+                <li style={{fontSize: '1.125rem'}}>✅ Node</li>
+                <li style={{fontSize: '1.125rem'}}>✅ Next.js 13</li>
+                <li style={{fontSize: '1.125rem'}}>✅ NextUI</li>
+                <li style={{fontSize: '1.125rem'}}>✅ MongoDB</li>
+            </ul>
+            <p style={{fontSize: '1.125rem'}}>Está destinado a hacer más sencilla la asignacion de proyectos.</p>
+            <p style={{fontSize: '1.125rem'}}>Se espera que al asignar los perfiles de los desarrolladores que se necesiten en un proyecto, el sistema se capaz de buscar en la base de datos los desarrolladores que más se adecuen a los perfiles indicados.</p>
+            <p style={{fontSize: '1.125rem'}}>Actualmente solo tiene un listado de Desarolladores junto con sus tres primeras skills y un listado de las skills disponibles ambos con un filtro por nombre.</p>
+            <p style={{fontSize: '1.125rem'}}>Tiene un diseño mobile-only.</p>
         </div>
-        {/* <div style={{marginLeft:'20%', marginRight: '20%'}}> */}
-        <article style={{display: 'flex', justifyContent: 'center'}}>
-            <div style={{maxWidth:'500px'}}>
-                <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero magni ratione hic tempora nisi, pariatur velit sit maxime voluptatibus sunt repudiandae facere rem excepturi harum quaerat quos natus nobis a.</h3>
-            </div>
-        </article>
 
     </>
   )

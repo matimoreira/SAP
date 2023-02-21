@@ -13,7 +13,7 @@ export async function getAllSkills(): Promise<SkillProps[]> {
     return await cursor.toArray();
 }
 
-export async function getSkillsByName( value: string): Promise<SkillProps[]> {
+export async function getSkillsByName( value: string | string[]): Promise<SkillProps[]> {
     let client = await clientPromise;
     let collection = client.db('SAP').collection('skills');
     let regexComparison = RegExp(".*" + value + ".*", "i");
@@ -22,10 +22,10 @@ export async function getSkillsByName( value: string): Promise<SkillProps[]> {
     return await cursor.toArray();;
 }
 
-export async function getSkillsByIdDev( value: string): Promise<Dev_SkillsProps[]> {
+export async function getSkillsByIdDev( value: string | string[]): Promise<Dev_SkillsProps[]> {
     let client = await clientPromise;
     let collection = client.db('SAP').collection('dev_skills');
-    let query = {_id: new ObjectId(value), isActive: true};
+    let query = {_id: new ObjectId(value && ""), isActive: true};
     // const agg = [
     //     {
     //       '$lookup': {

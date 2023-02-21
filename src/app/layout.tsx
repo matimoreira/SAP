@@ -24,11 +24,11 @@ export default function RootLayout({
       
       <body>
         <NextUIProvider theme={darkTheme}>
-          {/* <AppLayout> */}
+          <AppLayout>
             <Navigation page={page} setPage={setPage}></Navigation>
             {children}
             {/*Footer */}
-          {/* </AppLayout>  */}
+          </AppLayout> 
         </NextUIProvider>        
       </body>
     </html>
