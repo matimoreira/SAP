@@ -11,7 +11,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const [page, setPage] = useState(usePathname() === "/"? "/": usePathname());
+  const [page, setPage] = useState(usePathname());
   console.log(page);
   return (
     <html lang="en">
